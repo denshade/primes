@@ -33,6 +33,15 @@ function Navbar() {
                     recursive powering
                   </NavLink>
                 </li>
+                <li role="none">
+                  <NavLink
+                    to="/tools/chinese-remainder"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                  >
+                    chinese remainder theorem
+                  </NavLink>
+                </li>
               </ul>
             </details>
           </li>
