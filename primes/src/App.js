@@ -6,6 +6,7 @@ import RecursivePowPage from './pages/RecursivePowPage';
 import ChineseRemainderPage from './pages/ChineseRemainderPage';
 import PolynomialGcdPage from './pages/PolynomialGcdPage';
 import FpIrreduciblePage from './pages/FpIrreduciblePage';
+import JacobiSymbolPage from './pages/JacobiSymbolPage';
 import './App.css';
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/tools/chinese-remainder"
             element={<ChineseRemainderPage />}
+          />
+          <Route
+            path="/tools/jacobi-symbol"
+            element={<JacobiSymbolPage />}
           />
           <Route
             path="/tools/polynomial-gcd"

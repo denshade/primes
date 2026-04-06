@@ -1,7 +1,17 @@
+import { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
+  const dropdownRef = useRef(null);
+
+  function closeDropdown() {
+    const el = dropdownRef.current;
+    if (el) {
+      el.open = false;
+    }
+  }
+
   return (
     <nav className="navbar" aria-label="Main">
       <div className="navbar-inner">
@@ -10,7 +20,7 @@ function Navbar() {
         </NavLink>
         <ul className="navbar-menu">
           <li>
-            <details className="navbar-dropdown">
+            <details ref={dropdownRef} className="navbar-dropdown">
               <summary className="navbar-dropdown-summary">
                 number theoretical tools
               </summary>
@@ -20,6 +30,7 @@ function Navbar() {
                     to="/tools/extended-euclid"
                     className="navbar-dropdown-link"
                     role="menuitem"
+                    onClick={closeDropdown}
                   >
                     euclid algorithm extended
                   </NavLink>
@@ -29,6 +40,7 @@ function Navbar() {
                     to="/tools/recursive-pow"
                     className="navbar-dropdown-link"
                     role="menuitem"
+                    onClick={closeDropdown}
                   >
                     recursive powering
                   </NavLink>
@@ -38,8 +50,19 @@ function Navbar() {
                     to="/tools/chinese-remainder"
                     className="navbar-dropdown-link"
                     role="menuitem"
+                    onClick={closeDropdown}
                   >
                     chinese remainder theorem
+                  </NavLink>
+                </li>
+                <li role="none">
+                  <NavLink
+                    to="/tools/jacobi-symbol"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                    onClick={closeDropdown}
+                  >
+                    jacobi / legendre symbol
                   </NavLink>
                 </li>
                 <li
@@ -52,6 +75,7 @@ function Navbar() {
                     to="/tools/polynomial-gcd"
                     className="navbar-dropdown-link"
                     role="menuitem"
+                    onClick={closeDropdown}
                   >
                     extended gcd for polynomials
                   </NavLink>
@@ -66,6 +90,7 @@ function Navbar() {
                     to="/tools/fp-irreducible"
                     className="navbar-dropdown-link"
                     role="menuitem"
+                    onClick={closeDropdown}
                   >
                     irreducibility test (F_p[x])
                   </NavLink>
