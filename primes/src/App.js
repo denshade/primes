@@ -5,6 +5,7 @@ import EuclidExtendedPage from './pages/EuclidExtendedPage';
 import RecursivePowPage from './pages/RecursivePowPage';
 import ChineseRemainderPage from './pages/ChineseRemainderPage';
 import PolynomialGcdPage from './pages/PolynomialGcdPage';
+import FpIrreduciblePage from './pages/FpIrreduciblePage';
 import './App.css';
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
           <Route
             path="/tools/polynomial-gcd"
             element={<PolynomialGcdPage />}
+          />
+          <Route
+            path="/tools/fp-irreducible"
+            element={<FpIrreduciblePage />}
           />
         </Routes>
       </main>

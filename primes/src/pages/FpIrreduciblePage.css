@@ -1,0 +1,44 @@
+.fp-irr-intro {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.fp-irr-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.fp-irr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 12rem;
+}
+
+.fp-irr-field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+.fp-irr-f-input {
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.fp-irr-hint {
+  width: 100%;
+  margin: 0;
+  color: #5f6368;
+  font-size: 0.85rem;
+}

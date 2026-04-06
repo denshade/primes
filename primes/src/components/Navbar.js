@@ -56,6 +56,20 @@ function Navbar() {
                     extended gcd for polynomials
                   </NavLink>
                 </li>
+                <li
+                  className="navbar-dropdown-divider"
+                  role="separator"
+                  aria-hidden
+                />
+                <li role="none">
+                  <NavLink
+                    to="/tools/fp-irreducible"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                  >
+                    irreducibility test (F_p[x])
+                  </NavLink>
+                </li>
               </ul>
             </details>
           </li>
