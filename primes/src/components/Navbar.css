@@ -106,3 +106,9 @@
   background: #394150;
   color: #8ab4f8;
 }
+
+.navbar-dropdown-divider {
+  height: 1px;
+  margin: 0.35rem 0.7rem;
+  background: #3c424e;
+}

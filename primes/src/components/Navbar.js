@@ -42,6 +42,20 @@ function Navbar() {
                     chinese remainder theorem
                   </NavLink>
                 </li>
+                <li
+                  className="navbar-dropdown-divider"
+                  role="separator"
+                  aria-hidden
+                />
+                <li role="none">
+                  <NavLink
+                    to="/tools/polynomial-gcd"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                  >
+                    extended gcd for polynomials
+                  </NavLink>
+                </li>
               </ul>
             </details>
           </li>
