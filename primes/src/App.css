@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background: #f5f6f8;
+  color: #202124;
+}
+
+.App-main {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.page h1 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.page p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}

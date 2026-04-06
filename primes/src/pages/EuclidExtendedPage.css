@@ -1,0 +1,122 @@
+.euclid-page .euclid-intro {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.euclid-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.euclid-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.euclid-field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+.euclid-field input {
+  width: 8rem;
+  padding: 0.5rem 0.65rem;
+  font-size: 1rem;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.euclid-field input:focus {
+  outline: 2px solid #8ab4f8;
+  outline-offset: 1px;
+}
+
+.euclid-submit {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #1a73e8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.euclid-submit:hover {
+  background: #1557b0;
+}
+
+.euclid-submit:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.euclid-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: #fce8e6;
+  color: #c5221f;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.euclid-output-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: #3c4043;
+}
+
+.euclid-steps {
+  width: 100%;
+  min-height: 12rem;
+  padding: 0.75rem 1rem;
+  font-family: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+  background: #fff;
+  color: #202124;
+}
+
+.euclid-answer {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #e8f0fe 0%, #fef7e0 100%);
+  border: 1px solid #8ab4f8;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.12);
+}
+
+.euclid-answer-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1967d2;
+}
+
+.euclid-answer-body {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #174ea6;
+}
+
+.euclid-answer-body strong {
+  font-weight: 700;
+  color: #0d47a1;
+}

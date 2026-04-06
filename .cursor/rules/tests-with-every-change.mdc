@@ -1,0 +1,23 @@
+---
+description: Require automated tests for every substantive code change
+alwaysApply: true
+---
+
+# Tests with every change
+
+When you modify **application or library code** (behavior, UI, APIs, routing, utilities), you must **add or update automated tests in the same change** so the new or changed behavior is covered.
+
+## What to do
+
+- **New feature or page**: add tests that assert visible text, navigation, or key user flows (e.g. React Testing Library).
+- **Bug fix**: add a regression test that fails without the fix and passes with it.
+- **Refactor with same behavior**: keep existing tests green; adjust tests only if interfaces or selectors changed.
+
+## Out of scope
+
+- Changes that are **only** config, comments, or documentation with no executable behavior.
+- If the repo has no test setup yet, set up minimal testing first, then add tests for the change.
+
+## Verification
+
+Before finishing, run the project test command (e.g. `npm test -- --watchAll=false`) and ensure it passes.
