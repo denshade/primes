@@ -6,7 +6,10 @@ import RecursivePowPage from './pages/RecursivePowPage';
 import ChineseRemainderPage from './pages/ChineseRemainderPage';
 import PolynomialGcdPage from './pages/PolynomialGcdPage';
 import FpIrreduciblePage from './pages/FpIrreduciblePage';
+import PolyRootsFpPage from './pages/PolyRootsFpPage';
+import HenselLiftPage from './pages/HenselLiftPage';
 import JacobiSymbolPage from './pages/JacobiSymbolPage';
+import SqrtModPPage from './pages/SqrtModPPage';
 import './App.css';
 
 function App() {
@@ -33,12 +36,24 @@ function App() {
             element={<JacobiSymbolPage />}
           />
           <Route
+            path="/tools/sqrt-mod-p"
+            element={<SqrtModPPage />}
+          />
+          <Route
             path="/tools/polynomial-gcd"
             element={<PolynomialGcdPage />}
           />
           <Route
             path="/tools/fp-irreducible"
             element={<FpIrreduciblePage />}
+          />
+          <Route
+            path="/tools/poly-roots-fp"
+            element={<PolyRootsFpPage />}
+          />
+          <Route
+            path="/tools/hensel-lift"
+            element={<HenselLiftPage />}
           />
         </Routes>
       </main>

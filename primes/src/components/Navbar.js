@@ -65,6 +65,16 @@ function Navbar() {
                     jacobi / legendre symbol
                   </NavLink>
                 </li>
+                <li role="none">
+                  <NavLink
+                    to="/tools/sqrt-mod-p"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                    onClick={closeDropdown}
+                  >
+                    square root (mod p)
+                  </NavLink>
+                </li>
                 <li
                   className="navbar-dropdown-divider"
                   role="separator"
@@ -93,6 +103,26 @@ function Navbar() {
                     onClick={closeDropdown}
                   >
                     irreducibility test (F_p[x])
+                  </NavLink>
+                </li>
+                <li role="none">
+                  <NavLink
+                    to="/tools/poly-roots-fp"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                    onClick={closeDropdown}
+                  >
+                    polynomial roots (F_p)
+                  </NavLink>
+                </li>
+                <li role="none">
+                  <NavLink
+                    to="/tools/hensel-lift"
+                    className="navbar-dropdown-link"
+                    role="menuitem"
+                    onClick={closeDropdown}
+                  >
+                    hensel lifting (mod p^k)
                   </NavLink>
                 </li>
               </ul>

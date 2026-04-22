@@ -1,0 +1,27 @@
+.sqrt-mod-p-page .sqrt-mod-p-explain {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.sqrt-mod-p-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sqrt-mod-p-explain p {
+  margin: 0 0 0.85rem;
+}
+
+.sqrt-mod-p-explain p:last-child {
+  margin-bottom: 0;
+}
+
+.sqrt-mod-p-inline {
+  white-space: nowrap;
+}
+
+.sqrt-mod-p-result-body {
+  font-size: 1.05rem;
+}

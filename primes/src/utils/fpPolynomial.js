@@ -24,6 +24,20 @@ export function degreeFp(poly, p) {
   return trimFp(poly, p).length - 1;
 }
 
+/** Evaluate poly (coeffs ascending: c₀ + c₁x + …) at x in F_p (Horner). */
+export function polyEvalFp(poly, x, p) {
+  const t = trimFp(poly, p);
+  if (t.length === 0) {
+    return 0;
+  }
+  const xi = modP(x, p);
+  let r = t[t.length - 1];
+  for (let i = t.length - 2; i >= 0; i -= 1) {
+    r = modP(r * xi + t[i], p);
+  }
+  return r;
+}
+
 export function leadingFp(poly, p) {
   const t = trimFp(poly, p);
   if (t.length === 0) {
