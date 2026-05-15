@@ -1,23 +1,34 @@
+/* global BigInt */
+
 /**
  * Recursive powering: x^n using halving for even n and reduction for odd n.
- * @param {number|string} x
- * @param {number|string} n — nonnegative integer exponent
- * @returns {{ result: number, steps: string[], error: null } | { result: null, steps: string[], error: string }}
+ * @param {number|string|bigint} x
+ * @param {number|string|bigint} n — nonnegative integer exponent
+ * @returns {{ result: bigint, steps: string[], error: null } | { result: null, steps: string[], error: string }}
  */
 export function recursivePow(x, n) {
-  const xNum = Number(x);
-  const nRaw = Number(n);
-  const nInt = Math.trunc(nRaw);
-
-  if (!Number.isFinite(xNum) || !Number.isFinite(nRaw)) {
+  let base;
+  let exp;
+  try {
+    base = BigInt(x);
+    exp = BigInt(n);
+  } catch {
     return {
-      error: 'Enter valid numbers for x and n.',
+      error: 'Enter valid integers for x and n.',
       steps: [],
       result: null,
     };
   }
 
-  if (nInt < 0 || nRaw !== nInt) {
+  if (typeof n === 'number' && Number.isFinite(n) && !Number.isInteger(n)) {
+    return {
+      error: 'n must be a nonnegative integer.',
+      steps: [],
+      result: null,
+    };
+  }
+
+  if (exp < 0n) {
     return {
       error: 'n must be a nonnegative integer.',
       steps: [],
@@ -27,28 +38,28 @@ export function recursivePow(x, n) {
 
   const steps = [];
 
-  function rec(base, exp, depth) {
+  function rec(b, e, depth) {
     const ind = '  '.repeat(depth);
-    if (exp === 0) {
-      steps.push(`${ind}pow(${base}, 0) = 1  (base case)`);
-      return 1;
+    if (e === 0n) {
+      steps.push(`${ind}pow(${b}, 0) = 1  (base case)`);
+      return 1n;
     }
-    if (exp % 2 === 1) {
+    if (e % 2n === 1n) {
       steps.push(
-        `${ind}pow(${base}, ${exp}): n is odd → ${base} × pow(${base}, ${exp - 1})`
+        `${ind}pow(${b}, ${e}): n is odd → ${b} × pow(${b}, ${e - 1n})`
       );
-      return base * rec(base, exp - 1, depth + 1);
+      return b * rec(b, e - 1n, depth + 1);
     }
-    const nextBase = base * base;
-    const nextExp = exp / 2;
+    const nextBase = b * b;
+    const nextExp = e / 2n;
     steps.push(
-      `${ind}pow(${base}, ${exp}): n is even → pow(${base}², ${nextExp}) = pow(${nextBase}, ${nextExp})`
+      `${ind}pow(${b}, ${e}): n is even → pow(${b}², ${nextExp}) = pow(${nextBase}, ${nextExp})`
     );
     return rec(nextBase, nextExp, depth + 1);
   }
 
-  const result = rec(xNum, nInt, 0);
-  steps.push(`Result: ${xNum}^${nInt} = ${result}`);
+  const result = rec(base, exp, 0);
+  steps.push(`Result: ${base}^${exp} = ${result}`);
 
   return { result, steps, error: null };
 }

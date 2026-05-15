@@ -23,8 +23,8 @@ function RecursivePowPage() {
 
     setStepsText(result.steps.join('\n'));
     setAnswer({
-      x: Number(x),
-      n: Number(n),
+      x: x.trim(),
+      n: n.trim(),
       value: result.result,
     });
   }
@@ -42,8 +42,8 @@ function RecursivePowPage() {
           <input
             id="pow-x"
             name="x"
-            type="number"
-            step="any"
+            type="text"
+            inputMode="numeric"
             value={x}
             onChange={(ev) => setX(ev.target.value)}
             aria-label="x"
@@ -54,9 +54,8 @@ function RecursivePowPage() {
           <input
             id="pow-n"
             name="n"
-            type="number"
-            step="1"
-            min="0"
+            type="text"
+            inputMode="numeric"
             value={n}
             onChange={(ev) => setN(ev.target.value)}
             aria-label="n (power)"
